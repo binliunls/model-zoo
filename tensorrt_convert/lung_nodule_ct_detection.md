@@ -63,78 +63,34 @@ if __name__ == "__main__":
 Output was:
 
 ```
+DEBUG: [Torch-TensorRT] - In progress TRT block does not meet minimum block size requirements, therefore folding into in progress PyTorch block
+DEBUG: [Torch-TensorRT] - Finalizing in progress Torch block
+DEBUG: [Torch-TensorRT] - Segment Block @11:
+    Target: Torch
+
+    Graph: graph(%head_outputs.1 : Dict(str, Tensor[]),
+      %2 : Tensor[]):
+  %self.box_reg_key : str = prim::Constant[value="box_regression"]()
+   = aten::_set_item(%head_outputs.1, %self.box_reg_key, %2) # /opt/monai/monai/apps/detection/networks/retinanet_network.py:324:8
+  return ()
+
+
+DEBUG: [Torch-TensorRT] - Registering input/output torch::jit::Value for segmented graphs
 Traceback (most recent call last):
-  File "/opt/conda/lib/python3.8/runpy.py", line 194, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/opt/conda/lib/python3.8/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
-    cli.main()
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
-    run()
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
-    runpy.run_path(target, run_name="__main__")
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
-    return _run_module_code(code, init_globals, run_name,
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
-    _run_code(code, mod_globals, init_globals,
-  File "/root/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
-    exec(code, run_globals)
-  File "/home/liubin/data/trt_bundle_experiment/export_flexible_unet_trt.py", line 59, in <module>
-    ts_model = torch.jit.script(model)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 1286, in script
-    return torch.jit._recursive.create_script_module(
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 476, in create_script_module
-    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 538, in create_script_module_impl
-    script_module = torch.jit.RecursiveScriptModule._construct(cpp_module, init_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 615, in _construct
-    init_fn(script_module)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 516, in init_fn
-    scripted = create_script_module_impl(orig_value, sub_concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 538, in create_script_module_impl
-    script_module = torch.jit.RecursiveScriptModule._construct(cpp_module, init_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 615, in _construct
-    init_fn(script_module)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 516, in init_fn
-    scripted = create_script_module_impl(orig_value, sub_concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 538, in create_script_module_impl
-    script_module = torch.jit.RecursiveScriptModule._construct(cpp_module, init_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 615, in _construct
-    init_fn(script_module)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 516, in init_fn
-    scripted = create_script_module_impl(orig_value, sub_concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 538, in create_script_module_impl
-    script_module = torch.jit.RecursiveScriptModule._construct(cpp_module, init_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 615, in _construct
-    init_fn(script_module)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 516, in init_fn
-    scripted = create_script_module_impl(orig_value, sub_concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 538, in create_script_module_impl
-    script_module = torch.jit.RecursiveScriptModule._construct(cpp_module, init_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 615, in _construct
-    init_fn(script_module)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 516, in init_fn
-    scripted = create_script_module_impl(orig_value, sub_concrete_type, stubs_fn)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 542, in create_script_module_impl
-    create_methods_and_properties_from_stubs(concrete_type, method_stubs, property_stubs)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 393, in create_methods_and_properties_from_stubs
-    concrete_type._create_methods_and_properties(property_defs, property_rcbs, method_defs, method_rcbs, method_defaults)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_recursive.py", line 863, in try_compile_fn
-    return torch.jit.script(fn, _rcb=rcb)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/_script.py", line 1340, in script
-    ast = get_jit_def(obj, obj.__name__)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/frontend.py", line 293, in get_jit_def
-    return build_def(parsed_def.ctx, fn_def, type_line, def_name, self_name=self_name, pdt_arg_types=pdt_arg_types)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/frontend.py", line 331, in build_def
-    param_list = build_param_list(ctx, py_def.args, self_name, pdt_arg_types)
-  File "/opt/conda/lib/python3.8/site-packages/torch/jit/frontend.py", line 355, in build_param_list
-    raise NotSupportedError(ctx_range, _vararg_kwarg_err)
-torch.jit.frontend.NotSupportedError: Compiled functions can't take variable number of arguments or use keyword-only arguments with defaults:
-  File "/opt/conda/lib/python3.8/site-packages/torch/utils/checkpoint.py", line 164
-def checkpoint(function, *args, use_reentrant: bool = True, **kwargs):
-                                                             ~~~~~~~ <--- HERE
-    r"""Checkpoint a model or part of the model
+  File "export_flexible_unet_trt.py", line 61, in <module>
+    trt_ts_model = torch_tensorrt.compile(
+  File "/opt/conda/lib/python3.8/site-packages/torch_tensorrt/_compile.py", line 125, in compile
+    return torch_tensorrt.ts.compile(
+  File "/opt/conda/lib/python3.8/site-packages/torch_tensorrt/ts/_compiler.py", line 136, in compile
+    compiled_cpp_mod = _C.compile_graph(module._c, _parse_compile_spec(spec))
+RuntimeError: The following operation failed in the TorchScript interpreter.
+Traceback of TorchScript (most recent call last):
+            %1 : bool = prim::Constant[value=0]()
+            %2 : int[] = prim::Constant[value=[0, 0, 0]]()
+            %4 : Tensor = aten::_convolution(%x, %w, %b, %s, %p, %d, %1, %2, %g, %1, %1, %1, %1)
+                          ~~~~ <--- HERE
+            return (%4)
+RuntimeError: Given groups=1, weight of size [256, 512, 1, 1, 1], expected input[1, 256, 48, 48, 40] to have 512 channels, but got 256 channels instead
 ```
 <!-- If you have a code sample, error messages, stack traces, please provide it here as well -->
 
