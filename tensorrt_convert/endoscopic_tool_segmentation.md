@@ -153,7 +153,7 @@ Sucessfully convert the model.
  - Python version:3.8.13
  - CUDA version: 11.8
  - GPU models and configuration: 3090Ti
- - Any other relevant information:
+ - Any other relevant information:bundle_version:0.3.2
 
 ## Additional context
 
