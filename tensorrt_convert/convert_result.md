@@ -8,7 +8,7 @@
 5. pathology_nuclei_classification
 6. pathology_tumor_detection
 7. prostate_mri_anatomy
-8. [valve_landmarks](./valve_landmarks.md)
+8. valve_landmarks
 
 ## Fail
 ### Torch-TensorRT Fail
