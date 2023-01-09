@@ -200,7 +200,7 @@ def load_model_and_export(
     torch.jit.save(trt_ts_model, out_name)
 ```
 
-**Program stacked with output**:
+**Program stuck with output**:
 
 ```
 GRAPH: [Torch-TensorRT] - Found that node  = prim::If(%15784) # /opt/monai/monai/networks/nets/hovernet.py:578:12
