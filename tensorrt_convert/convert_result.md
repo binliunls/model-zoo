@@ -1,6 +1,6 @@
 # Convert Result
 
-## Sucess
+## Success
 1. spleen_ct_segmentation
 2. endoscopic_inbody_classificaion
 3. brats_mri_segmentation
@@ -23,8 +23,8 @@
  - CUDA version: 11.8
  - GPU models and configuration: 3090Ti
 
-## Fail
-### Torch-TensorRT Fail
+## Failure
+### Torch-TensorRT Failure
 1. [lung_nodule_ct_detection](./lung_nodule_ct_detection.md)
 2. [endoscopic_tool_segmentation](./endoscopic_tool_segmentation.md)
 3. [spleen_deepedit_annotation?](./spleen_deepedit_annotation.md)
@@ -34,7 +34,7 @@
 7. [pathology_nuclei_segmentation_classification](./pathology_nuclei_segmentation_classification.md)
 
 
-### TorchScript Fail
+### TorchScript Failure
 1. [swin_unetr_btcv_segmentation](./swin_unetr_btcv_segmentation.md)
 2. [mednist_reg](./mednist_reg.md)
 3. [pancreas_ct_dints_segmentation](./pancreas_ct_dints_segmentation.md)
