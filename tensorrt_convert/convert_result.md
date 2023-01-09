@@ -9,6 +9,19 @@
 6. pathology_tumor_detection
 7. prostate_mri_anatomy
 8. valve_landmarks
+### Environment
+ - TensorRT: 8.5.0.12-1+cuda11.8
+ - MONAI: 1.1.0
+ - Torch-TensorRT Version (e.g. 1.0.0): 1.3.0a0
+ - PyTorch Version (e.g. 1.0): 1.13.0a0
+ - CPU Architecture: x86-64
+ - OS (e.g., Linux): ubuntu 20.04
+ - How you installed PyTorch (`conda`, `pip`, `libtorch`, source): conda
+ - Build command you used (if compiling from source):
+ - Are you using local sources or building from archives:
+ - Python version:3.8.13
+ - CUDA version: 11.8
+ - GPU models and configuration: 3090Ti
 
 ## Fail
 ### Torch-TensorRT Fail
