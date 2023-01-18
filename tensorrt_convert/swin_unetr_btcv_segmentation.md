@@ -7,7 +7,7 @@ Cannot export to torchscript.
 Steps to reproduce the behavior:
 
 1. Pull the monai image 1.1.0 from [link](https://hub.docker.com/r/projectmonai/monai/tags)
-1. Star a docker container with the downloaded image in step 1.
+1. Start a docker container with the downloaded image in step 1.
 1. Run the code below.
 
 ```
