@@ -34,6 +34,7 @@
 6. [mednist_gan](./mednist_gan.md)
 7. [pathology_nuclei_segmentation_classification](./pathology_nuclei_segmentation_classification.md)
 8. [pancreas_ct_dints_segmentation](./pancreas_ct_dints_segmentation.md)
+9. [dynamic_batch_input](./dynamic_batch_input.md)
 
 
 ### TorchScript Failure
